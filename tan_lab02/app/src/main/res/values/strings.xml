@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="b">b=</string>
+    <string name="sum">Вычислить</string>
+    <string name="button_name">Введите цифры и нажмите кнопку сумма</string>
+    <string name="a">a=</string>
+    <string name="x">x=</string>
+    <string name="task">task</string>
+    <string name="clear">Очистить</string>
+</resources>
