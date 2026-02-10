@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
+        android:textColor="#F576DC"
+        android:textSize="36sp"
+        android:text="Adopt your kitten"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/textView1"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:ems="20"
+        android:hint="Your name"
+        android:inputType="textPersonName"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:textColor="#F792E3"
+        android:text="Your house"
+        />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/textView2">
+
+        <RadioButton
+            android:id="@+id/radio_option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#F792E3"
+            android:text="apartment" />
+
+        <RadioButton
+            android:id="@+id/radio_option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#F792E3"
+            android:text="cottage" />
+
+        <RadioButton
+            android:id="@+id/radio_option3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#F792E3"
+            android:text="mansion" />
+
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup"
+        android:gravity="center"
+        android:textColor="#F792E3"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Your city"/>
+
+    <Spinner
+        android:layout_below="@+id/textView3"
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:minWidth="100dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#F792E3"
+        android:layout_marginTop="20dp"
+        android:entries="@array/city_array"/>
+
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F0D3EA"
+            android:onClick="onClickNxt"
+            android:text="Next"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#F792E3"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F0D3EA"
+            android:onClick="onClickExit"
+            android:text="Exit"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#F792E3"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/animatedImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="30dp"
+        android:layout_below="@id/buttons"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/animation_list" />
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">tan_lab03</string>
+    <string-array name="city_array">
+        <item>Pavlodar</item>
+        <item>Semey</item>
+        <item>Almaty</item>
+        <item>Astana</item>
+        <item>Aktau</item>
+    </string-array>
+
+    <string name="happy">happy</string>
+    <string name="sad">sad</string>
+    <string name="neutral">neutral</string>
+</resources>
