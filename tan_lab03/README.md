@@ -21,6 +21,8 @@ The app follows a short, linear flow across **three screens (activities)**:
 
 ## Purpose
 This project was created as a simple learning exercise to practice Android fundamentals such as activities, UI design, intents, and basic animations.
+
+
 <img width="477" height="711" alt="image" src="https://github.com/user-attachments/assets/292d67f9-18ee-47aa-8f52-396a17208443" />
 <img width="391" height="712" alt="image" src="https://github.com/user-attachments/assets/34c8c8ae-52e1-4a4f-aaa0-4acb64bb1b80" />
 
