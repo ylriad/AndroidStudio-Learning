@@ -1,11 +1,31 @@
-# TSN_DEMO_04_EBook
+# EBook tan_lab04
 Электронная книга
 
-![Screenshot](screenshot1.png)
+![Screenshot](screenshot1.jpeg)
 
-![Screenshot](screenshot2.png)
+![Screenshot](screenshot2.jpeg)
 
-https://www.youtube.com/watch?v=LGl9R8_IgNU
+# tan_lab04
 
-Прокрутка WebView клавишами громкости:
-https://gist.github.com/proffix4/45eee6d9bb511512efccb535e46fa465
+An Android e-book application about world religions.
+
+## Features
+- 📖 Offline HTML content (Christianity, Islam, Buddhism, etc.)
+- 🔍 Full-text search within articles
+- ⚙️ Customizable font size and settings
+- 📱 Navigation drawer for easy topic access
+
+## Tech Stack
+- **Language:** Java
+- **IDE:** Android Studio
+- **Components:** WebView, SharedPreferences, NavigationView
+
+## How to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/tan_lab04.git
+   ```
+2. Open the project in **Android Studio** and click **Run**.
+
+---
+*Educational project.*
