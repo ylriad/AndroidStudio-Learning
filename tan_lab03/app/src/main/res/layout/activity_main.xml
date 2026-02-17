@@ -20,15 +20,20 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
-        android:layout_margin="20dp"
-        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:ems="20"
+        android:gravity="center"
         android:hint="Your name"
-        android:inputType="textPersonName"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView2"
@@ -83,17 +88,19 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Your city"/>
 
+
     <Spinner
-        android:layout_below="@+id/textView3"
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:minWidth="100dp"
         android:layout_height="50dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="0dp"
+        android:entries="@array/city_array"
+        android:minWidth="100dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#F792E3"
-        android:layout_marginTop="20dp"
-        android:entries="@array/city_array"/>
-
+        android:textColor="#F792E3" />
 
     <LinearLayout
         android:id="@+id/buttons"
@@ -102,7 +109,7 @@
         android:layout_below="@id/spinner"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="11dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"

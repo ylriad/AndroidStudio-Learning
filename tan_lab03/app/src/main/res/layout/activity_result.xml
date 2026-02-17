@@ -57,8 +57,7 @@
         android:gravity="center"
         android:textColor="#F792E3"
         android:textSize="58dp"
-        android:textStyle="bold"
-        android:visibility="invisible" />
+        android:textStyle="bold"/>
 
     <ImageButton
         android:id="@+id/imageButton"

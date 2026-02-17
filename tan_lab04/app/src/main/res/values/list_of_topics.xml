@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="r1">Христианство</string>
+    <string name="r2">Ислам</string>
+    <string name="r3">Индуизм</string>
+    <string name="r4">Буддизм</string>
+
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/r1"
+            android:icon="@drawable/ic_view_list_black_24dp"
+            android:title="@string/r1" />
+        <item
+            android:id="@+id/r2"
+            android:icon="@drawable/ic_menu_lecture"
+            android:title="@string/r2" />
+        <item
+            android:id="@+id/r3"
+            android:icon="@drawable/ic_menu_lecture"
+            android:title="@string/r3" />
+        <item
+            android:id="@+id/r4"
+            android:icon="@drawable/ic_menu_lecture"
+            android:title="@string/r4" />
+    </group>
+
+    <item android:title="@string/religions">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/needed"
+                    android:icon="@drawable/ic_error_outline_black_24dp"
+                    android:title="@string/needed" />
+                <item
+                    android:id="@+id/no_need"
+                    android:icon="@drawable/ic_error_outline_black_24dp"
+                    android:title="@string/no_need" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/additional">
+        <menu>
+            <item
+                android:id="@+id/main_religions"
+                android:icon="@drawable/ic_import_contacts_black_24dp"
+                android:title="@string/main_religions" />
+            <item
+                android:id="@+id/history"
+                android:icon="@drawable/ic_import_contacts_black_24dp"
+                android:title="@string/history" />
+            <item
+                android:id="@+id/opinion"
+                android:icon="@drawable/ic_import_contacts_black_24dp"
+                android:title="@string/opinion" />
+        </menu>
+    </item>
+
+    <item android:title="@string/communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_drafts_black_24dp"
+                android:title="@string/send_mail" />
+        </menu>
+    </item>
+
+</menu>

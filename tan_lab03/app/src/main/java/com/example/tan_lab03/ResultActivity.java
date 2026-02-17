@@ -52,7 +52,6 @@ public class ResultActivity extends AppCompatActivity {
         TextView textView4 = findViewById(R.id.textView4);
         textView4.setKeyListener(null);
         textView4.setText(catName + "\n");
-        textView4.setVisibility(View.VISIBLE);
     }
 
 

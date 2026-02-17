@@ -37,12 +37,6 @@ public class KittenActivity extends AppCompatActivity {
         city = receivedIntent.getStringExtra("City");
 
 
-        checkBox1 = findViewById(R.id.checkBox1);
-        checkBox2 = findViewById(R.id.checkBox2);
-        radioGroup = findViewById(R.id.radioGroup);
-        editText =   findViewById(R.id.editText);
-
-
         ImageView animatedImageView = findViewById(R.id.animatedImageView);
 
         AnimationDrawable frameAnimation = (AnimationDrawable) animatedImageView.getBackground();
