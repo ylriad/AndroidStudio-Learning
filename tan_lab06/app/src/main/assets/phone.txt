@@ -1,0 +1,30 @@
+iPhone 15 Pro | 120.000
+iPhone 14 | 90.000
+Samsung Galaxy S23 | 80.000
+Samsung Galaxy A54 | 40.000
+Xiaomi 13 | 75.000
+Xiaomi Redmi Note 12 | 20.000
+Google Pixel 7 | 60.000
+Google Pixel 6a | 35.000
+OnePlus 11 | 65.000
+OnePlus Nord 3 | 30.000
+Huawei P60 | 70.000
+Huawei Nova 11 | 45.000
+Realme GT 3 | 55.000
+Realme C55 | 15.000
+Honor Magic 5 | 68.000
+Honor X9a | 25.000
+Sony Xperia 1 V | 110.000
+Sony Xperia 10 V | 42.000
+Motorola Edge 40 | 50.000
+Motorola Moto G53 | 18.000
+iPhone 13 | 70.000
+iPhone SE 2022 | 45.000
+Samsung Galaxy Z Flip5 | 100.000
+Samsung Galaxy M34 | 22.000
+Xiaomi Poco F5 | 38.000
+Xiaomi Poco X5 | 24.000
+Google Pixel 8 | 95.000
+Nothing Phone 2 | 58.000
+Nothing Phone 1 | 40.000
+Asus Zenfone 10 | 72.000
