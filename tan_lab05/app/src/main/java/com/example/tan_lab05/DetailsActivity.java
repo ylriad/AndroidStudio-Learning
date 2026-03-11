@@ -17,15 +17,11 @@ public class DetailsActivity extends AppCompatActivity {
 
         String name = getIntent().getStringExtra("name");
         String desc = getIntent().getStringExtra("desc");
-        String ytId = getIntent().getStringExtra("yt");
         String link = getIntent().getStringExtra("link");
 
         String html = "<html><body style='font-family: sans-serif; padding: 20px;'>" +
                 "<h1>" + name + "</h1>" +
                 "<p>" + desc + "</p>" +
-                "<hr>" +
-                "<h3>Video Review:</h3>" +
-                "<iframe width='100%' height='200' src='https://www.youtube.com/embed/" + ytId + "' frameborder='0' allowfullscreen></iframe>" +
                 "<br><br>" +
                 "<h3>Links:</h3>" +
                 "<ul>" +
@@ -35,7 +31,6 @@ public class DetailsActivity extends AppCompatActivity {
                 "</ul>" +
                 "</body></html>";
 
-        // Corrected for UTF-8 support
         webView.loadDataWithBaseURL(null, html, "text/html", "UTF-8", null);
     }
 }

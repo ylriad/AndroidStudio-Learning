@@ -1,6 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Permissions for Internet and Location -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -13,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tan_lab05">
 
-        <!-- ⚠️ REPLACE WITH YOUR ACTUAL API KEY -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBgXSQspfAfYwU_5Ft6DJ4teHRjcSBG9C0"/>
@@ -27,7 +25,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Register DetailsActivity -->
         <activity android:name=".DetailsActivity" />
 
     </application>

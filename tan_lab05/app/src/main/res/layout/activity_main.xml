@@ -3,16 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- 1. The Map -->
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- 5. Map Type Menu (Top Right) -->
-
-    <!-- Bottom Control Panel -->
     <Spinner
         android:id="@+id/spinnerMapType"
         android:layout_width="wrap_content"
@@ -35,7 +31,6 @@
         android:orientation="vertical"
         android:background="#e7b4ed">
 
-        <!-- 3. Dropdown List for Locations -->
         <Spinner
             android:id="@+id/spinnerLocations"
             android:layout_width="411dp"
@@ -46,7 +41,6 @@
             android:minHeight="48dp"
             android:padding="8dp" />
 
-        <!-- 2. Table Layout for Quick Buttons -->
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -57,11 +51,9 @@
                 android:layout_height="wrap_content"
                 android:background="#b8aeb7"
                 android:stretchColumns="*">
-                <!-- Buttons added via Java -->
             </TableLayout>
         </HorizontalScrollView>
 
-        <!-- 4. Details Button -->
         <Button
             android:id="@+id/btnDetails"
             android:layout_width="match_parent"

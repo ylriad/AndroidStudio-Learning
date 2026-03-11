@@ -29,13 +29,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private List<LocationData> locations = new ArrayList<>();
     private LocationData currentLocation;
 
-    // Data Class
     static class LocationData {
         String name;
         double lat;
         double lng;
         String description;
-        String youtubeId;
         String websiteLink;
 
         public LocationData(String name, double lat, double lng, String desc, String link) {
@@ -52,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 1. Initialize Data (EDIT COORDINATES TO YOUR DISTRICT)
         locations.add(new LocationData("Toraighyrov University", 52.266895, 76.966336, "Pavlodar State University", "https://tou.edu.kz/ru/"));
         locations.add(new LocationData("Small", 52.263084144603475, 76.97114137105537, "Supermarket", "https://small.kz/ru/pavlodar"));
         locations.add(new LocationData("KFC", 52.26830379811451, 76.968725640207, "Fast-food",  "https://www.kfc.kz/"));
@@ -60,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         locations.add(new LocationData("Stadium", 52.27159905884728, 76.96456394910165, "Sports territory", "https://"));
         locations.add(new LocationData("Tagam", 52.26601610843722, 76.95642241823955, "Family cafe",  "https://tagam-halal.kz/pavlodar"));
 
-        // Get Map
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -69,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void setupUI() {
-        // 5. Map Type Spinner
         Spinner mapTypeSpinner = findViewById(R.id.spinnerMapType);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.map_types, android.R.layout.simple_spinner_item);
@@ -88,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-        // 3. Location Spinner
         Spinner locationSpinner = findViewById(R.id.spinnerLocations);
         List<String> names = new ArrayList<>();
         for (LocationData loc : locations) names.add(loc.name);
@@ -106,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-        // 2. Table Buttons
         TableLayout tableLayout = findViewById(R.id.tableLayoutButtons);
         TableRow row = new TableRow(this);
 
@@ -126,13 +119,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         tableLayout.addView(row);
 
-        // 4. Details Button
         findViewById(R.id.btnDetails).setOnClickListener(v -> {
             if (currentLocation != null) {
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
                 intent.putExtra("name", currentLocation.name);
                 intent.putExtra("desc", currentLocation.description);
-                intent.putExtra("yt", currentLocation.youtubeId);
                 intent.putExtra("link", currentLocation.websiteLink);
                 startActivity(intent);
             } else {

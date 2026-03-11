@@ -16,25 +16,23 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final int LARGE_FONT = 16; // Размер шрифта для режима крупного шрифта
-    private final int SMALL_FONT = 12; // Размер шрифта для режима обычного шрифта
-    private int fontSize = SMALL_FONT; // Выбранный размер шрифта
+    private final int LARGE_FONT = 16;
+    private final int SMALL_FONT = 12;
+    private int fontSize = SMALL_FONT;
 
-    MySQLite db = new MySQLite(this); // Класс работы с нашей базой данных
+    MySQLite db = new MySQLite(this);
 
-    EditText editText; // Компонент для задания строки поиска
-    TextView textView; // Компонент для вывода ответа
+    EditText editText;
+    TextView textView;
+    static final String FILTER = "FILTER";
+    String filter = "";
 
-    static final String FILTER = "FILTER"; // Имя параметра для сохранения при переворачивании экрана
-    String filter = ""; // Фильтр поиска
-
-    SharedPreferences sPref; // Класс для работы с настройками программы
-    static final String CONFIG_FILE_NAME = "Config"; // Имя файла настроек приложения
-    static final String FONT_SIZE = "FontSize"; // Имя параметра для сохранения размера шрифта в настройках приложения
+    SharedPreferences sPref;
+    static final String CONFIG_FILE_NAME = "Config";
+    static final String FONT_SIZE = "FontSize";
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        // Сохранение данных при перевороте экрана
         savedInstanceState.putString(FILTER, filter);
         super.onSaveInstanceState(savedInstanceState);
     }
@@ -45,31 +43,26 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        // Активация меню
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Доступ к компонентам
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.textView);
 
-        textView.setKeyListener(null); // Запрет на изменение данных с клавиатуры
+        textView.setKeyListener(null);
 
-        // Чтение сохраненной настройки размера шрифта из параметров приложения
         sPref = getSharedPreferences(CONFIG_FILE_NAME, MODE_PRIVATE);
         fontSize = sPref.getInt(FONT_SIZE, SMALL_FONT);
 
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize); // Установка начально размера шрифта
-        textView.requestFocus(); // Передача фокуса на комонент чтобы закрылось окно ввода у "editText"
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize);
+        textView.requestFocus();
 
-        // Восстановление фильтра после переворота экрана
         if (savedInstanceState != null) {
             editText.setText(savedInstanceState.getString(FILTER));
         }
 
         textView.setText(R.string.Загрузка_данных);
 
-        // Обработчик изменения текста в компоненте "editText"
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -82,12 +75,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                // Сделаем поиск данных в другом потоке
                 new Thread(new Runnable() {
                     public void run() {
                         filter = editText.getText().toString().trim();
                         final String data = db.getData(filter);
-                        // Сделаем вывод результата синхронно с основным потоком
                         textView.post(new Runnable() {
                             public void run() {
                                 textView.setText(data);
@@ -100,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        // Инициализация начального поиска (показать все записи)
         editText.post(new Runnable() {
             public void run() {
                 editText.setText(filter);
@@ -111,16 +101,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        // Установка правильного отображения пункта выбора крупного шрифта
         menu.findItem(R.id.large_font).setChecked(fontSize == LARGE_FONT);
         return true;
     }
 
-    // Обработчик выбора пунктов меню
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        // Написать автору
         if (id == R.id.email) {
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("message/rfc822");
@@ -134,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         }
-        // Установка/снятие крупного шрифта
         if (id == R.id.large_font) {
             item.setChecked(!item.isChecked());
             int size = item.isChecked() ? LARGE_FONT : SMALL_FONT;
@@ -142,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
             fontSize = size;
             return true;
         }
-        // Выход
         if (id == R.id.exit) {
             finish();
             return true;
@@ -150,11 +135,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // Метод при закрытии окна
     @Override
     protected void onStop() {
         super.onStop();
-        // Сохранение размера шрифта в настройках программы
         SharedPreferences.Editor ed = sPref.edit();
         ed.putInt(FONT_SIZE, fontSize);
         ed.apply();
