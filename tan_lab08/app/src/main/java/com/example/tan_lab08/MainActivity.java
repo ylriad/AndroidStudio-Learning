@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         parseButton.setOnClickListener(v -> {
             String username = usernameEditText.getText().toString().trim();
             if (username.isEmpty()) {
-                Toast.makeText(this, "Введите username GitHub", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Enter GitHub username", Toast.LENGTH_SHORT).show();
                 return;
             }
             startParsing(username);
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startParsing(String username) {
         setLoadingState(true);
-        resultTextView.setText("🔄 Загрузка данных с GitHub...\nПожалуйста, подождите.");
+        resultTextView.setText("Please,wait...");
 
         GitHubFollowingParser.parseFollowingAsync(username, new GitHubFollowingParser.ParseCallback() {
             @Override
@@ -80,13 +80,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayResults(List<GitHubUser> users, String username) {
         if (users == null || users.isEmpty()) {
-            resultTextView.setText("⚠️ Не найдено пользователей");
+            resultTextView.setText("No users found");
             return;
         }
 
         StringBuilder sb = new StringBuilder();
-        sb.append("✅ Найдено: ").append(users.size()).append(" пользователей\n\n")
-                .append("📋 Подписки: @").append(username).append("\n\n")
+        sb.append("Found:: ").append(users.size()).append(" users\n\n")
+                .append("Followings: @").append(username).append("\n\n")
                 .append("━━━━━━━━━━━━━━━━━━━━━━━\n\n");
 
         for (int i = 0; i < users.size(); i++) {
@@ -96,20 +96,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         resultTextView.setText(sb.toString());
-        Log.d(TAG, "Успешно распарсено " + users.size() + " пользователей");
+        Log.d(TAG, "Successfully parsed " + users.size() + " users");
     }
 
     private void showError(String message) {
-        Log.e(TAG, "Ошибка: " + message);
-        resultTextView.setText("❌ Ошибка:\n" + message);
-        Toast.makeText(this, "Ошибка парсинга", Toast.LENGTH_LONG).show();
+        Log.e(TAG, "Error: " + message);
+        resultTextView.setText("Error:\n" + message);
+        Toast.makeText(this, "Parsing error", Toast.LENGTH_LONG).show();
     }
 
     private void setLoadingState(boolean isLoading) {
         progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
         parseButton.setEnabled(!isLoading);
         usernameEditText.setEnabled(!isLoading);
-        parseButton.setText(isLoading ? "Загрузка..." : "🚀 Начать парсинг");
+        parseButton.setText(isLoading ? "Download..." : "Start parsing");
     }
 
     @Override
