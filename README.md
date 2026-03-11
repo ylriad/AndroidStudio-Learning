@@ -12,3 +12,5 @@ A collection of practice apps as I learn Java & Android Studio.
 - [Lab 04: EBook, religions](https://github.com/ylriad/AndroidStudio-Learning/tree/main/tan_lab04/)
 - [Lab 05: My District Maps](https://github.com/ylriad/AndroidStudio-Learning/tree/main/tan_lab05/)
 - [Lab 06: Phone models](https://github.com/ylriad/AndroidStudio-Learning/tree/main/tan_lab06/)
+- [Lab 07: Github followings](https://github.com/ylriad/AndroidStudio-Learning/tree/main/tan_lab07/)
+- [Lab 08: Github followings(jsoup)](https://github.com/ylriad/AndroidStudio-Learning/tree/main/tan_lab08/)
